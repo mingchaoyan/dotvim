@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin
+END
+vcscvs.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcscvs.vim
+END
+vcsbzr.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcsbzr.vim
+END
+vcshg.vim
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcshg.vim
+END
+vcscommand.vim
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcscommand.vim
+END
+vcsgit.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcsgit.vim
+END
+vcssvk.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcssvk.vim
+END
+vcssvn.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/19/trunk/bundle/vcscommand/plugin/vcssvn.vim
+END

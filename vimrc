@@ -1,87 +1,160 @@
 "Maintainer: 
-"				mingchaoyan
-"				mingchaoyan@gmail.com
-"Version: 		
-"				1.7	
-"				2012-11-27
-"PluginsNeeded:	
-"				vimerl
-"				lookupfile
-"				genutils
-"				taglist
+"               mingchaoyan
+"               mingchaoyan@gmail.com
+"Version:   
+"               3.3
+"PluginsNeeded:
+"               pathogen
+"               vimerl
+"               lookupfile
+"               genutils
+"               taglist
+"               nerdtree
+"               tabular
+"ChangeLog:
+"               * 3.4
+"                   - powerline
+"               * 3.3
+"                   - vcscommand
+"               * 3.2 
+"                   - calendar
+"               * 3.1
+"                   - tabular
+"               * 3.0
+"                   - multi-platform support
+"               * 2.0
+"                   - add nerdtree
 "
 "
 "pathogen
 call pathogen#infect()
+call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
 "Platform
 function! MySys()
-	if has("win32")
-		return "windows"
-	else
-		return "linux"
-	endif
+    if has("win32")
+        return "windows"
+    else
+        return "linux"
+    endif
 endfunction
 
 "Set mapleader
 let mapleader=","
 
+function! SwitchToBuf(filename)
+    "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
+    " find in current tab
+    let bufwinnr = bufwinnr(a:filename)
+    if bufwinnr != -1
+        exec bufwinnr . "wincmd w"
+        return
+    else
+        " find in each tab
+        tabfirst
+        let tab = 1
+        while tab <= tabpagenr("$")
+            let bufwinnr = bufwinnr(a:filename)
+            if bufwinnr != -1
+                exec "normal " . tab . "gt"
+                exec bufwinnr . "wincmd w"
+                return
+            endif
+            tabnext
+            let tab = tab + 1
+        endwhile
+        " not exist, new tab
+        exec "tabnew " . a:filename
+    endif
+endfunction
+
 "Fast edit vimrc
 if MySys() == "linux"
-	"Fast reload .vimrc
-	map <silent> <leader>ss :source ~/.vimrc<cr>
-	"Fast edit .vimrc
-	map <silent> <leader>ee :tabe ~/.vimrc<cr>
+    "Fast reload .vimrc
+    map <silent> <leader>ss :source ~/.vimrc<cr>
+    "Fast edit .vimrc
+    map <silent> <leader>ee :call SwitchToBuf("~/.vimrc")<cr>
 elseif MySys() == "windows"
+    "Fast reload .vimrc
+    map <silent> <leader>ss :source ~/_vimrc<cr>
+    "Fast edit .vimrc
+    map <silent> <leader>ee :call SwitchToBuf("~/_vimrc")<cr>
+endif
+
+"For windows version
+if MySys() == "windows"
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
 endif
 
 "General
+se nocompatible   
+se laststatus=2   " Always show the statusline
 se nu
 se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 se go=
 se cul
-se so=7 "jk 保证有7行的剩余
-se shiftwidth=4 "自动缩进时tab设置为4
+se so=7 
+se shiftwidth=4 
 se tabstop=4
 se hlsearch
 se expandtab
+se list
+se lcs=tab:\|\ 
+se path+=/usr/local/src/otp_src_R15B02,**
+se define=-define
+se include=-include
 se magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
-colo darkblue
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+se incsearch
+se makeprg=erl\ -make 
+"se foldmethod=indent
+colo desert
+map <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
 
 "taglist setting
-let Tlist_Show_One_File = 1 "taglist插件只显示当前文件的tag
-let Tlist_Use_Right_Window = 1 "让taglist窗口显示在右边，默认在左边
-let Tlist_Exit_OnlyWindow = 1 "退出vim时候退出taglist
-se tags=tags;/ "在当前目录找不到tags文件时，请到上层目录去找
+let Tlist_Show_One_File = 1 
+let Tlist_Use_Right_Window = 1 
+let Tlist_Exit_OnlyWindow = 1 
+map <silent> <F9> :TlistToggle<cr>
+se tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 
 "lookupfile setting
-let g:LookupFile_MinPatLength=2 " 最少输入2个字符开始查找
-let g:LookupFile_PreserveLastPattern=0 " 不保存上次历史
-let g:LookupFile_PreservePatternHistory=0 " 不保存上次历史
-let g:LookupFile_AlwaysAcceptFirst=1 " 回车打开第一各匹配项
+let g:LookupFile_MinPatLength=2 
+let g:LookupFile_UsingSpecializedTags = 1
+let g:LookupFile_PreserveLastPattern=0 
+let g:LookupFile_PreservePatternHistory=1 
+let g:LookupFile_AllowNewFiles = 1
+let g:LookupFile_AlwaysAcceptFirst=1 
 if filereadable("./filenametags")
-	let g:LookupFile_TagExpr='"./filenametags"' " 设置tag文件
+    let g:LookupFile_TagExpr='"./filenametags"' 
 endif
 nmap <silent> <leader>lk <Plug>LookupFile
 
 "vimerl
-let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
-let erlang_keywordprg = "man"
-let erlang_skel_header={"author":"mingchaoyan","email":"mingchaoyan@gmail.com","com":"www.4399sy.com"}
-nmap <F10> :!ctags -R ./*<cr>
-nmap <silent> <leader>f :r ~/.vim/function.comment<cr>
-nmap <F5> :!erl -make<cr>
-map <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
-map <silent> <leader>en :ErlangEnableShowErrors<cr>
-map <silent> <leader>di :ErlangDisableShowErrors<cr>
+if MySys() == "linux"
+    let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
+    let erlang_keywordprg = "man"
+    let erlang_skel_header={"author":"mingchaoyan","email":"mingchaoyan@gmail.com","com":"www.4399.com"}
+    let erlang_folding  = 0
+    nmap <F10> :!ctags -R ./*<cr>;./genfilenametags.sh<cr>
+    nmap <silent> <leader>f :r ~/.vim/function.comment<cr>
+    nmap <F5> :make<cr>
+    "autocmd BufWritePost *.erl :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
+    map <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
+    map <silent> <leader>en :ErlangEnableShowErrors<cr>
+    map <silent> <leader>di :ErlangDisableShowErrors<cr>
+elseif MySys() == "windows"
+endif
 
+"nerdtree
+map <F4> :NERDTreeToggle<cr>
 
-"Netrw 
-let g:netrw_liststyle=3
-let g:netrw_winsize   = 90
-let g:netrw_altv = 1
+"let g:Powerline_symbols = 'fancy'
+"let g:Powerline_theme = 'solarized256'
+"let g:Powerline_colorscheme = 'solarized256'
+set t_Co=256
+let NERDTreeDirArrows=0

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments
+END
+hgrev.vim
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/hgrev.vim
+END
+virtualenv.vim
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/virtualenv.vim
+END
+tagbar.vim
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/tagbar.vim
+END
+syntastic.vim
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/syntastic.vim
+END
+fugitive.vim
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/fugitive.vim
+END
+ft_man.vim
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/ft_man.vim
+END
+ctrlp.vim
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/ctrlp.vim
+END
+rvm.vim
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/22/trunk/bundle/powerline/autoload/Powerline/Segments/rvm.vim
+END
