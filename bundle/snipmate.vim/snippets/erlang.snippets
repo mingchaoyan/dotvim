@@ -32,6 +32,8 @@ snippet case
 	case ${1:expression} of
 	    ${2:pattern} ->
 	        ${3:body};
+		_  ->
+			ok
 	end
 # record directive
 snippet rec
@@ -44,5 +46,5 @@ snippet try
 	catch 
 		throw:${2:throw}
 	after
-		${3:after body}
+		${3:after_body}
 	end
