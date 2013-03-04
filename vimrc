@@ -12,6 +12,8 @@
 "               nerdtree
 "               tabular
 "ChangeLog:
+"               * 3.4.1 
+"                   - use window to display man page
 "               * 3.4
 "                   - powerline
 "               * 3.3
@@ -31,6 +33,10 @@ call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
+
+" load plugins that ship with Vim {{{
+runtime ftplugin/man.vim
+"}}}
 
 "Platform
 function! MySys()
@@ -97,7 +103,8 @@ se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 se go=
-se cul
+se cursorcolumn
+se cursorline
 se so=7 
 se shiftwidth=4 
 se tabstop=4
