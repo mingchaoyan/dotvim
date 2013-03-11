@@ -119,6 +119,7 @@ se include=-include
 se magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
 se incsearch
 se makeprg=erl\ -make 
+se showcmd
 "se foldmethod=indent
 colo desert
 map <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
