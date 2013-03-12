@@ -103,13 +103,14 @@ se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 se go=
+se ignorecase smartcase
 se cursorcolumn
 se cursorline
 se so=7 
 se shiftwidth=4 
 se tabstop=4
-se hlsearch
 se expandtab
+se hlsearch
 se list
 se lcs=tab:\|\ 
 se path+=/usr/local/src/otp_src_R15B02,**
