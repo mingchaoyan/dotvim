@@ -124,8 +124,8 @@ se makeprg=erl\ -make
 se showcmd
 "se foldmethod=indent
 
+set t_Co=256
 colo desert
-
 se cursorcolumn
 se cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
@@ -173,8 +173,8 @@ map <F4> :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
 
 "powline
-set t_Co=256
 
 "snipmate
 "
 map <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
+
