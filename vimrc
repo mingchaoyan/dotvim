@@ -132,6 +132,7 @@ hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
 
 map <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
+map <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.erl<cr>:lw<cr>
 
 "taglist setting
 let Tlist_Show_One_File = 1 
@@ -158,7 +159,7 @@ if MySys() == "linux"
     let erlang_keywordprg = "man"
     let erlang_skel_header={"author":"mingchaoyan","email":"mingchaoyan@gmail.com","com":"www.4399.com"}
     let erlang_folding  = 0
-    nmap <F10> :!ctags -R ./*<cr>;./genfilenametags.sh<cr>
+    nmap <F10> :!./genfilenametags.sh<cr>
     nmap <silent> <leader>f :r ~/.vim/function.comment<cr>
     nmap <F5> :make<cr>
     "autocmd BufWritePost *.erl :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
@@ -171,8 +172,6 @@ endif
 "nerdtree
 map <F4> :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
-
-"powline
 
 "snipmate
 "
