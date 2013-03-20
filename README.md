@@ -1,5 +1,3 @@
-vimrc
-=====
 # How to use this repository
 * 1 cd $HOME
 * 2 git clone *repository* .vim
@@ -11,7 +9,7 @@ vimrc
 # Working with Git submodules
 * To add a new submodule run from the top level directory:
 
-    git submodule add <repository> bundle/<plugin>
+    git submodule add *repository* bundle/*plugin*
 
 * To pull a submodule repository run from the top level directory:
 
