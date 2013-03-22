@@ -176,4 +176,5 @@ let NERDTreeDirArrows=0
 set t_Co=256
 
 "snipmate
+"
 map <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
