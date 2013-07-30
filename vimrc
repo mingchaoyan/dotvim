@@ -28,14 +28,19 @@
 "                   - add nerdtree
 "
 "
+" echo "(>^.^<)"
+
 "pathogen
 call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
+nnoremap <space> za
+se showmatch
+se matchtime=5
 " load plugins that ship with Vim {{{
-"runtime ftplugin/man.vim
+runtime ftplugin/man.vim
 "}}}
 
 "Platform
@@ -79,16 +84,16 @@ endfunction
 "Fast edit vimrc
 if MySys() == "linux"
     "Fast reload .vimrc
-    map <silent> <leader>ss :source ~/.vimrc<CR>
+    noremap <silent> <leader>ss :source ~/.vimrc<CR>
     "Fast edit .vimrc
-    map <silent> <leader>ee :call SwitchToBuf("~/.vimrc")<CR>
+    noremap <silent> <leader>ee :call SwitchToBuf("~/.vimrc")<CR>
     " When .vimrc is edited, reload it
     autocmd! bufwritepost .vimrc source ~/.vimrc
 elseif MySys() == "windows"
     "Fast reload .vimrc
-    map <silent> <leader>ss :source ~/_vimrc<cr>
+    noremap <silent> <leader>ss :source ~/_vimrc<cr>
     "Fast edit .vimrc
-    map <silent> <leader>ee :call SwitchToBuf("~/_vimrc")<cr>
+    noremap <silent> <leader>ee :call SwitchToBuf("~/_vimrc")<cr>
 endif
 
 "For windows version
@@ -106,7 +111,7 @@ se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 se go=
 se ignorecase smartcase
-se so=7 
+se scrolloff=7 
 se shiftwidth=4 
 se tabstop=4
 se expandtab
@@ -131,14 +136,14 @@ se cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
 
-map <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
-map <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.erl<cr>:lw<cr>
+noremap <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
+noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
 
 "taglist setting
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
 let Tlist_Exit_OnlyWindow = 1 
-map <silent> <F9> :TlistToggle<cr>
+noremap <silent> <F9> :TlistToggle<cr>
 se tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 
 "lookupfile setting
@@ -151,7 +156,7 @@ let g:LookupFile_AlwaysAcceptFirst=1
 if filereadable("./filenametags")
     let g:LookupFile_TagExpr='"./filenametags"' 
 endif
-nmap <silent> <leader>lk <Plug>LookupFile
+nnoremap <silent> <leader>lk <Plug>LookupFile
 
 "vimerl
 if MySys() == "linux"
@@ -159,21 +164,21 @@ if MySys() == "linux"
     let erlang_keywordprg = "man"
     let erlang_skel_header={"author":"mingchaoyan","email":"mingchaoyan@gmail.com","com":"www.4399.com"}
     let erlang_folding  = 0
-    nmap <F10> :!./genfilenametags.sh<cr>
-    nmap <silent> <leader>f :r ~/.vim/function.comment<cr>
-    nmap <F5> :make<cr>
+    nnoremap <F10> :!./genfilenametags.sh<cr>
+    nnoremap <silent> <leader>f :r ~/.vim/function.comment<cr>
+    nnoremap <F5> :make<cr>
     "autocmd BufWritePost *.erl :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
-    map <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
-    map <silent> <leader>en :ErlangEnableShowErrors<cr>
-    map <silent> <leader>di :ErlangDisableShowErrors<cr>
+    noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
+    noremap <silent> <leader>en :ErlangEnableShowErrors<cr>
+    noremap <silent> <leader>di :ErlangDisableShowErrors<cr>
 elseif MySys() == "windows"
 endif
 
 "nerdtree
-map <F4> :NERDTreeToggle<cr>
+noremap <F4> :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
 
 "snipmate
 "
-map <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
+noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
 
