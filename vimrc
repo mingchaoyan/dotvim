@@ -105,7 +105,8 @@ endif
 "General
 se nocompatible   
 se laststatus=2   " Always show the statusline
-se nu
+se number
+se relativenumber
 se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -136,7 +137,7 @@ se cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
 
-noremap <leader>g :vimgrep // **/*.erl<left><left><left><left><left><left><left><left><left><left>
+noremap <leader>g :vimgrep // **/*.[eh]rl<left><left><left><left><left><left><left><left><left><left><left><left><left>
 noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
 
 "taglist setting
@@ -156,7 +157,7 @@ let g:LookupFile_AlwaysAcceptFirst=1
 if filereadable("./filenametags")
     let g:LookupFile_TagExpr='"./filenametags"' 
 endif
-nnoremap <silent> <leader>lk <Plug>LookupFile
+map <silent> <leader>lk <Plug>LookupFile
 
 "vimerl
 if MySys() == "linux"
