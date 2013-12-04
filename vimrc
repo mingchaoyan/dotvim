@@ -106,7 +106,11 @@ endif
 se nocompatible   
 se laststatus=2   " Always show the statusline
 se number
-se relativenumber
+
+if v:version >= 703
+    se relativenumber
+endif
+
 se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -154,8 +158,8 @@ let g:LookupFile_PreserveLastPattern=0
 let g:LookupFile_PreservePatternHistory=1 
 let g:LookupFile_AllowNewFiles = 1
 let g:LookupFile_AlwaysAcceptFirst=1 
-if filereadable("./filenametags")
-    let g:LookupFile_TagExpr='"./filenametags"' 
+if filereadable("./.filenametags")
+    let g:LookupFile_TagExpr='"./.filenametags"' 
 endif
 map <silent> <leader>lk <Plug>LookupFile
 
@@ -163,9 +167,9 @@ map <silent> <leader>lk <Plug>LookupFile
 if MySys() == "linux"
     let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
     let erlang_keywordprg = "man"
-    let erlang_skel_header={"author":"mingchaoyan","email":"mingchaoyan@gmail.com","com":"www.4399.com"}
+    let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
     let erlang_folding  = 0
-    nnoremap <F10> :!./genfilenametags.sh<cr>
+    nnoremap <F10> :!./.genfilenametags.sh<cr>
     nnoremap <silent> <leader>f :r ~/.vim/function.comment<cr>
     nnoremap <F5> :make<cr>
     "autocmd BufWritePost *.erl :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
@@ -182,4 +186,5 @@ let NERDTreeDirArrows=0
 "snipmate
 "
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
+
 
