@@ -1,4 +1,4 @@
-"Maintainer: 
+﻿"Maintainer: 
 "               mingchaoyan
 "               mingchaoyan at gmail.com
 "Version:   
@@ -29,6 +29,7 @@
 "
 "
 " echo "(>^.^<)"
+" test sync
 
 "pathogen
 call pathogen#infect()
