@@ -28,8 +28,7 @@
 "                   - add nerdtree
 "
 "
-" echo "(>^.^<)"
-" test sync
+echo "(>^.^<)"
 
 "pathogen
 call pathogen#infect()
