@@ -1,5 +1,4 @@
-﻿"Maintainer: 
-"               mingchaoyan
+"Maintainer: 
 "               mingchaoyan at gmail.com
 "Version:   
 "               3.4
@@ -12,6 +11,8 @@
 "               nerdtree
 "               tabular
 "ChangeLog:
+"               * 3.4.2 
+"                   - 使用autocmd 定制同一个命令在不同文件类型下的表现
 "               * 3.4.1 
 "                   - use window to display man page
 "               * 3.4
@@ -28,7 +29,6 @@
 "                   - add nerdtree
 "
 "
-echo "(>^.^<)"
 
 "pathogen
 call pathogen#infect()
@@ -141,9 +141,6 @@ se cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
 
-noremap <leader>g :vimgrep // **/*.[eh]rl<left><left><left><left><left><left><left><left><left><left><left><left><left>
-noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
-
 "taglist setting
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
@@ -187,4 +184,7 @@ let NERDTreeDirArrows=0
 "
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
 
+noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
+autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.lua  <cr>:lw<cr>
 
