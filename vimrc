@@ -55,46 +55,8 @@ endfunction
 "Set mapleader
 let mapleader=","
 
-function! SwitchToBuf(filename)
-    "let fullfn = substitute(a:filename, "^\\~/", $HOME . "/", "")
-    " find in current tab
-    let bufwinnr = bufwinnr(a:filename)
-    if bufwinnr != -1
-        exec bufwinnr . "wincmd w"
-        return
-    else
-        " find in each tab
-        tabfirst
-        let tab = 1
-        while tab <= tabpagenr("$")
-            let bufwinnr = bufwinnr(a:filename)
-            if bufwinnr != -1
-                exec "normal " . tab . "gt"
-                exec bufwinnr . "wincmd w"
-                return
-            endif
-            tabnext
-            let tab = tab + 1
-        endwhile
-        " not exist, new tab
-        exec "tabnew " . a:filename
-    endif
-endfunction
-
-"Fast edit vimrc
-if MySys() == "linux"
-    "Fast reload .vimrc
-    noremap <silent> <leader>ss :source ~/.vimrc<CR>
-    "Fast edit .vimrc
-    noremap <silent> <leader>ee :call SwitchToBuf("~/.vimrc")<CR>
-    " When .vimrc is edited, reload it
-    autocmd! bufwritepost .vimrc source ~/.vimrc
-elseif MySys() == "windows"
-    "Fast reload .vimrc
-    noremap <silent> <leader>ss :source ~/_vimrc<cr>
-    "Fast edit .vimrc
-    noremap <silent> <leader>ee :call SwitchToBuf("~/_vimrc")<cr>
-endif
+nnoremap <leader>ee :split $MYVIMRC<CR><C-W>j
+nnoremap <leader>ss :source $MYVIMRC<CR>
 
 "For windows version
 if MySys() == "windows"
