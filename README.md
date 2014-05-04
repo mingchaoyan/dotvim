@@ -4,7 +4,6 @@
 * 3 cd .vim
 * 4 git submodule init
 * 5 git submodule update
-* 6 ln -s ~/.vim/vimrc ~/.vimrc
 
 # Working with Git submodules
 * To add a new submodule run from the top level directory:
