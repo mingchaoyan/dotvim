@@ -2,7 +2,7 @@
 "               mingchaoyan at gmail.com
 "Version:   
 "               3.4
-"PluginsNeeded:
+"PluginsNeeded: {{{
 "               pathogen
 "               vimerl
 "               lookupfile
@@ -10,7 +10,8 @@
 "               taglist
 "               nerdtree
 "               tabular
-"ChangeLog:
+"}}}
+"ChangeLog: {{{
 "               * 3.4.2 
 "                   - 使用autocmd 定制同一个命令在不同文件类型下的表现
 "               * 3.4.1 
@@ -27,52 +28,22 @@
 "                   - multi-platform support
 "               * 2.0
 "                   - add nerdtree
-"
-"
+"}}}
 
-"pathogen
+"pathogen {{{
 call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
-
-nnoremap <space> za
-se showmatch
-se matchtime=5
-" load plugins that ship with Vim {{{
-runtime ftplugin/man.vim
 "}}}
 
-"Platform
-function! MySys()
-    if has("win32")
-        return "windows"
-    else
-        return "linux"
-    endif
-endfunction
-
-"Set mapleader
-let mapleader=","
-
-nnoremap <leader>ee :split $MYVIMRC<CR>
-nnoremap <leader>ss :source $MYVIMRC<CR>
-
-"For windows version
-if MySys() == "windows"
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-endif
-
-"General
+"General {{{
 se nocompatible   
 se laststatus=2   " Always show the statusline
 se number
-
 if v:version >= 703
     se relativenumber
 endif
-
 se guifont=Consolas:h11
 se nobackup
 se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -84,7 +55,6 @@ se tabstop=4
 se expandtab
 se hlsearch
 se list
-
 se lcs=tab:\|\ 
 se path+=/usr/local/src/otp_src_R15B02,**
 se define=-define
@@ -92,25 +62,48 @@ se include=-include
 se magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
 se incsearch
 se makeprg=erl\ -make 
-
 se showcmd
-"se foldmethod=indent
-
 set t_Co=256
 colo desert
 se cursorcolumn
 se cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
+nnoremap <space> za
+se showmatch
+se matchtime=5
+function! MySys()
+    if has("win32")
+        return "windows"
+    else
+        return "linux"
+    endif
+endfunction
+let mapleader=","
+if MySys() == "windows"
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+endif
+"}}}
 
-"taglist setting
+" load plugins that ship with Vim {{{
+runtime ftplugin/man.vim
+"}}}
+
+" vimrc {{{
+nnoremap <leader>ee :split $MYVIMRC<CR>
+nnoremap <leader>ss :source $MYVIMRC<CR>
+"}}}
+
+"taglist setting {{{
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
 let Tlist_Exit_OnlyWindow = 1 
 noremap <silent> <F9> :TlistToggle<cr>
 se tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
+"}}}
 
-"lookupfile setting
+"lookupfile setting {{{
 let g:LookupFile_MinPatLength=2 
 let g:LookupFile_UsingSpecializedTags = 1
 let g:LookupFile_PreserveLastPattern=0 
@@ -121,8 +114,9 @@ if filereadable("./.filenametags")
     let g:LookupFile_TagExpr='"./.filenametags"' 
 endif
 map <silent> <leader>lk <Plug>LookupFile
+"}}}
 
-"vimerl
+"vimerl {{{
 if MySys() == "linux"
     let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
     let erlang_keywordprg = "man"
@@ -137,20 +131,24 @@ if MySys() == "linux"
     noremap <silent> <leader>di :ErlangDisableShowErrors<cr>
 elseif MySys() == "windows"
 endif
+"}}}
 
-"nerdtree
+"nerdtree {{{
 noremap <F4> :NERDTreeToggle<cr>
 let NERDTreeDirArrows=0
+"}}}
 
-"snipmate
-"
+"snipmate {{{
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
+"}}}
 
+" search {{{
 noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
 autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.lua  <cr>:lw<cr>
+"}}}
 
-" Vimscript file settings ---------------------- {{{
+" Vimscript file settings {{{
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
