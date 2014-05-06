@@ -55,7 +55,7 @@ endfunction
 "Set mapleader
 let mapleader=","
 
-nnoremap <leader>ee :split $MYVIMRC<CR><C-W>j
+nnoremap <leader>ee :split $MYVIMRC<CR>
 nnoremap <leader>ss :source $MYVIMRC<CR>
 
 "For windows version
@@ -150,3 +150,9 @@ noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
 autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.lua  <cr>:lw<cr>
 
+" Vimscript file settings ---------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
