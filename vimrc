@@ -37,41 +37,39 @@ syntax on
 filetype plugin indent on
 "}}}
 
-"General {{{
-se nocompatible   
-se laststatus=2   " Always show the statusline
-se number
+"general {{{
+set nocompatible   
+set laststatus=2   " Always show the statusline
+set number
 if v:version >= 703
-    se relativenumber
+    set relativenumber
 endif
-se guifont=Consolas:h11
-se nobackup
-se fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-se go=
-se ignorecase smartcase
-se scrolloff=7 
-se shiftwidth=4 
-se tabstop=4
-se expandtab
-se hlsearch
-se list
-se lcs=tab:\|\ 
-se path+=/usr/local/src/otp_src_R15B02,**
-se define=-define
-se include=-include
-se magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
-se incsearch
-se makeprg=erl\ -make 
-se showcmd
+set guifont=Consolas:h11
+set nobackup
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set go=
+set ignorecase smartcase
+set scrolloff=7 
+set shiftwidth=4 
+set tabstop=4
+set expandtab
+set list
+set lcs=tab:\|\ 
+set path+=/usr/local/src/otp_src_R15B02,**
+set define=-define
+set include=-include
+set magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
+set makeprg=erl\ -make 
+set showcmd
 set t_Co=256
 colo desert
-se cursorcolumn
-se cursorline
+set cursorcolumn
+set cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
 hi CursorColumn cterm=NONE ctermbg=DarkBlue
 nnoremap <space> za
-se showmatch
-se matchtime=5
+set showmatch
+set matchtime=5
 function! MySys()
     if has("win32")
         return "windows"
@@ -100,7 +98,7 @@ let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1 
 let Tlist_Exit_OnlyWindow = 1 
 noremap <silent> <F9> :TlistToggle<cr>
-se tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
+set tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 "}}}
 
 "lookupfile setting {{{
@@ -143,6 +141,8 @@ noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.s
 "}}}
 
 " search {{{
+set hlsearch
+set incsearch
 noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
 autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.lua  <cr>:lw<cr>
