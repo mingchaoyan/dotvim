@@ -82,6 +82,7 @@ if MySys() == "windows"
     source $VIMRUNTIME/mswin.vim
     behave mswin
 endif
+set foldcolumn=4
 "}}}
 
 " load plugins that ship with Vim {{{
@@ -119,7 +120,7 @@ if MySys() == "linux"
     let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
     let erlang_keywordprg = "man"
     let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
-    let erlang_folding  = 0
+    let erlang_folding  = 1
     nnoremap <F10> :!./.genfilenametags.sh<cr>
     nnoremap <silent> <leader>f :r ~/.vim/function.comment<cr>
     nnoremap <F5> :make<cr>
