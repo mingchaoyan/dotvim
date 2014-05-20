@@ -141,7 +141,7 @@ noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.s
 "}}}
 
 " vcscommand{{{
-let VCSCommandResultBufferExtension=".vcs"
+let VCSCommandResultBufferNameExtension=".vcs"
 " }}}
 
 " search {{{
