@@ -82,7 +82,7 @@ if MySys() == "windows"
     source $VIMRUNTIME/mswin.vim
     behave mswin
 endif
-set foldcolumn=4
+set foldcolumn=2
 "}}}
 
 " load plugins that ship with Vim {{{
@@ -124,7 +124,6 @@ if MySys() == "linux"
     nnoremap <F10> :!./.genfilenametags.sh<cr>
     nnoremap <silent> <leader>f :r ~/.vim/function.comment<cr>
     nnoremap <F5> :make<cr>
-    "autocmd BufWritePost *.erl :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
     noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
     noremap <silent> <leader>en :ErlangEnableShowErrors<cr>
     noremap <silent> <leader>di :ErlangDisableShowErrors<cr>
@@ -140,6 +139,10 @@ let NERDTreeDirArrows=0
 "snipmate {{{
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
 "}}}
+
+" vcscommand{{{
+let VCSCommandResultBufferExtension=".vcs"
+" }}}
 
 " search {{{
 set hlsearch
