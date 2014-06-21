@@ -38,6 +38,8 @@ filetype plugin indent on
 "}}}
 
 "general {{{
+inoremap jk <esc>
+inoremap <esc> <nop>
 set nocompatible   
 set laststatus=2   " Always show the statusline
 set number
