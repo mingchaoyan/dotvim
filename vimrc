@@ -64,7 +64,7 @@ set magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
 set makeprg=erl\ -make 
 set showcmd
 set t_Co=256
-colo desert
+colorscheme desert
 set cursorcolumn
 set cursorline
 hi CursorLine cterm=None ctermbg=DarkBlue
