@@ -8,7 +8,7 @@
 # Working with Git submodules
 * To add a new submodule run from the top level directory:
 
-    git submodule add *repository* bundle/plugin
+    git submodule add *repository* bundle/*plugin*
 
 * To pull a submodule repository run from the top level directory:
 
@@ -18,4 +18,4 @@
 * To update all the submodule repositories in one shot run from the top
   level directory, commit afterwards:
 
-    git submodule foreach 'git pull'
+    git submodule foreach git pull origin master
