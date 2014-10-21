@@ -85,6 +85,7 @@ if MySys() == "windows"
     behave mswin
 endif
 set foldcolumn=2
+nnoremap <silent> <F10> :!ctags -R<CR>
 "}}}
 
 " load plugins that ship with Vim {{{
@@ -100,7 +101,7 @@ nnoremap <leader>ss :source $MYVIMRC<CR>
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
 let Tlist_Exit_OnlyWindow = 1 
-noremap <silent> <F9> :TlistToggle<cr>
+noremap <silent> <F9> :TlistToggle<CR>
 set tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 "}}}
 
@@ -123,23 +124,23 @@ if MySys() == "linux"
     let erlang_keywordprg = "man"
     let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
     let erlang_folding  = 1
-    nnoremap <F10> :!./.genfilenametags.sh<cr>
-    nnoremap <silent> <leader>f :r ~/.vim/function.comment<cr>
-    nnoremap <F5> :make<cr>
-    noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<cr>
-    noremap <silent> <leader>en :ErlangEnableShowErrors<cr>
-    noremap <silent> <leader>di :ErlangDisableShowErrors<cr>
+    "nnoremap <F10> :!./.genfilenametags.sh<CR>
+    nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
+    nnoremap <F5> :make<CR>
+    noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<CR>
+    noremap <silent> <leader>en :ErlangEnableShowErrors<CR>
+    noremap <silent> <leader>di :ErlangDisableShowErrors<CR>
 elseif MySys() == "windows"
 endif
 "}}}
 
 "nerdtree {{{
-noremap <F4> :NERDTreeToggle<cr>
+noremap <F4> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=0
 "}}}
 
 "snipmate {{{
-noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<cr>
+noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<CR>
 "}}}
 
 " vcscommand{{{
@@ -150,8 +151,8 @@ let VCSCommandResultBufferNameExtension=".vcs"
 set hlsearch
 set incsearch
 noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.*rl  <cr>:lw<cr>
-autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<cr>\>/j **/*.lua  <cr>:lw<cr>
+autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*rl  <CR>:lw<CR>
+autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.lua  <CR>:lw<CR>
 "}}}
 
 " Vimscript file settings {{{
