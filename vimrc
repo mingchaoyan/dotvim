@@ -160,3 +160,11 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
+
+" ULua file settings {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType text setlocal filetype=lua
+    let NERDTreeIgnore=['\.meta$', '\~$']
+augroup END
+" }}}
