@@ -112,9 +112,7 @@ let g:LookupFile_PreserveLastPattern=0
 let g:LookupFile_PreservePatternHistory=1 
 let g:LookupFile_AllowNewFiles = 1
 let g:LookupFile_AlwaysAcceptFirst=1 
-if filereadable("./.filenametags")
-    let g:LookupFile_TagExpr='"./.filenametags"' 
-endif
+let g:LookupFile_DefaultCmd = ':LUPath'
 map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
