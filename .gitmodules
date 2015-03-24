@@ -31,9 +31,9 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".\\bundle/vim-misc"]
-	path = .\\bundle/vim-misc
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
-[submodule ".\\bundle/vim-lua-ftplugin"]
-	path = .\\bundle/vim-lua-ftplugin
+[submodule "bundle/vim-lua-ftplugin"]
+	path = bundle/vim-lua-ftplugin
 	url = https://github.com/xolox/vim-lua-ftplugin
