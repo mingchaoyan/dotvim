@@ -10,8 +10,12 @@
 "               taglist
 "               nerdtree
 "               tabular
+"               vim-misc
+"               vim-lua-ftplugin
 "}}}
 "ChangeLog: {{{
+"               * 3.5 
+"                   - 添加lua插件
 "               * 3.4.2 
 "                   - 使用autocmd 定制同一个命令在不同文件类型下的表现
 "               * 3.4.1 
