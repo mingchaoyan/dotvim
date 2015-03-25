@@ -1,7 +1,7 @@
 "Maintainer: 
 "               mingchaoyan at gmail.com
 "Version:   
-"               3.4
+"               3.5
 "PluginsNeeded: {{{
 "               pathogen
 "               vimerl
@@ -34,6 +34,19 @@
 "                   - add nerdtree
 "}}}
 
+"load plugins by platform {{{
+function! MySys()
+    if has("win32")
+        return "windows"
+    else
+        return "linux"
+    endif
+endfunction
+if MySys() == "windows"
+    let g:pathogen_disabled = ['vimerl']
+endif
+"}}}
+
 "pathogen {{{
 call pathogen#infect()
 call pathogen#helptags()
@@ -45,7 +58,7 @@ filetype plugin indent on
 inoremap jk <esc>
 inoremap <esc> <nop>
 set nocompatible   
-set laststatus=2   " Always show the statusline
+set laststatus=2 
 set number
 if v:version >= 703
     set relativenumber
@@ -76,13 +89,6 @@ hi CursorColumn cterm=NONE ctermbg=DarkBlue
 nnoremap <space> za
 set showmatch
 set matchtime=5
-function! MySys()
-    if has("win32")
-        return "windows"
-    else
-        return "linux"
-    endif
-endfunction
 let mapleader=","
 if MySys() == "windows"
     source $VIMRUNTIME/mswin.vim
@@ -121,19 +127,15 @@ map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
 "vimerl {{{
-if MySys() == "linux"
-    let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
-    let erlang_keywordprg = "man"
-    let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
-    let erlang_folding  = 1
-    "nnoremap <F10> :!./.genfilenametags.sh<CR>
-    nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
-    nnoremap <F5> :make<CR>
-    noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<CR>
-    noremap <silent> <leader>en :ErlangEnableShowErrors<CR>
-    noremap <silent> <leader>di :ErlangDisableShowErrors<CR>
-elseif MySys() == "windows"
-endif
+let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
+let erlang_keywordprg = "man"
+let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
+let erlang_folding  = 1
+nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
+nnoremap <F5> :make<CR>
+noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<CR>
+noremap <silent> <leader>en :ErlangEnableShowErrors<CR>
+noremap <silent> <leader>di :ErlangDisableShowErrors<CR>
 "}}}
 
 "nerdtree {{{
