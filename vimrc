@@ -96,6 +96,11 @@ if MySys() == "windows"
 endif
 set foldcolumn=2
 nnoremap <silent> <F10> :!ctags -R<CR>
+cnoremap <C-A> <Home>
+cnoremap <C-F> <Right>
+cnoremap <C-B> <Left>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
 "}}}
 
 " load plugins that ship with Vim {{{
