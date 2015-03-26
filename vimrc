@@ -134,8 +134,6 @@ let erlang_folding  = 1
 nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
 nnoremap <F5> :make<CR>
 noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<CR>
-noremap <silent> <leader>en :ErlangEnableShowErrors<CR>
-noremap <silent> <leader>di :ErlangDisableShowErrors<CR>
 "}}}
 
 "nerdtree {{{
