@@ -128,6 +128,7 @@ let g:LookupFile_PreservePatternHistory=1
 let g:LookupFile_AllowNewFiles = 1
 let g:LookupFile_AlwaysAcceptFirst=1 
 let g:LookupFile_DefaultCmd = ':LUPath'
+let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
