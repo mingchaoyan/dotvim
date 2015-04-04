@@ -6,7 +6,7 @@ How to use this repository
 4. git submodule init
 5. git submodule update
 
-P.S. Help-tags will be generated when first open vim, then submodule will be dirty.
+P.S. Help-tags will be generated when first opening vim, then submodule will be dirty.
     So you should go to the submodule directory, do a "git add" + "git commit" to get all content tracked within the            submodule one by one. At last, do a "git commit" at the top dicretory(.vim/)
 Working with Git submodules
 =============
