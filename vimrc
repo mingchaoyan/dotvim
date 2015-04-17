@@ -12,6 +12,7 @@
 "               tabular
 "               vim-misc
 "               vim-lua-ftplugin
+"               SingleCompile
 "}}}
 "ChangeLog: {{{
 "               * 3.5 
@@ -177,3 +178,7 @@ augroup filetype_vim
     let NERDTreeIgnore=['\.meta$', '\~$']
 augroup END
 " }}}
+
+" SingleCompile {{{
+nmap <leader>rr :SingleCompileRun<CR>
+ "}}}
