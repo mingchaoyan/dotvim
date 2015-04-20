@@ -7,7 +7,7 @@ How to use this repository
 5. git submodule update
 
 P.S. Help-tags will be generated when first opening vim, then some submodules will be dirty.
-    So you should go to the submodule directory, do a "git add" + "git commit" to get all content tracked within the            submodule one by one. At last, do a "git commit" at the top dicretory(.vim/)
+    So you should create a global gitignore https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
 Working with Git submodules
 =============
 1. To add a new submodule run from the top level directory:
@@ -19,3 +19,13 @@ Working with Git submodules
     git submodule init
     
     git submodule update
+    
+3. To remove a submodule;
+    
+    delete entry in .gitmodule
+    
+    delete entry in .git/
+
+    rm -rf bundle/xxx
+    
+    git ca
