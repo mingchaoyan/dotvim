@@ -37,9 +37,6 @@
 [submodule "bundle/vim-lua-ftplugin"]
 	path = bundle/vim-lua-ftplugin
 	url = https://github.com/xolox/vim-lua-ftplugin
-[submodule "bundle/DrawIt"]
-	path = bundle/DrawIt
-	url = https://github.com/vim-scripts/DrawIt
 [submodule "bundle/SingleCompile"]
 	path = bundle/SingleCompile
 	url = https://github.com/xuhdev/SingleCompile.git
