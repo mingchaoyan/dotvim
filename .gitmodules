@@ -4,30 +4,18 @@
 [submodule "bundle/genutils"]
 	path = bundle/genutils
 	url = https://github.com/vim-scripts/genutils.git
-[submodule "bundle/lookupfile"]
-	path = bundle/lookupfile
-	url = https://github.com/vim-scripts/lookupfile.git
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "bundle/powerline"]
 	path = bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "bundle/vimerl"]
 	path = bundle/vimerl
 	url = https://github.com/jimenezrick/vimerl.git
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "bundle/vcscommand"]
-	path = bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -37,9 +25,6 @@
 [submodule "bundle/vim-lua-ftplugin"]
 	path = bundle/vim-lua-ftplugin
 	url = https://github.com/xolox/vim-lua-ftplugin
-[submodule "bundle/SingleCompile"]
-	path = bundle/SingleCompile
-	url = https://github.com/xuhdev/SingleCompile.git
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
 	url = https://github.com/vim-scripts/DrawIt.git
