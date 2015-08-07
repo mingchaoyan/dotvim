@@ -64,7 +64,7 @@ set number
 if v:version >= 703
     set relativenumber
 endif
-set guifont=Consolas:h11
+set guifont=Consolas:h12
 set nobackup
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set go=
@@ -75,7 +75,7 @@ set tabstop=4
 set expandtab
 set list
 set lcs=tab:\|\ 
-set path+=/usr/local/src/otp_src_R15B02,**
+set path+=/usr/local/otp_src_17.5/lib,**
 set define=-define
 set include=-include
 set magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
@@ -136,7 +136,7 @@ map <silent> <leader>lk <Plug>LookupFile
 "vimerl {{{
 let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
 let erlang_keywordprg = "man"
-let erlang_skel_header={"author":"mingchaoyan","owner":"4399","year":"2013"}
+let erlang_skel_header={"author":"mingchaoyan@gmail.com","owner":"mingchaoyan","year":"2015"}
 let erlang_folding  = 1
 nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
 nnoremap <F5> :make<CR>
@@ -182,3 +182,8 @@ augroup END
 " SingleCompile {{{
 nmap <leader>rr :SingleCompileRun<CR>
  "}}}
+ 
+ " DirDiff {{{
+ let g:DirDiffExcludes = "*.meta,*.so,*.a,*.dll,*DS_Store"
+ let g:DirDiffAddArgs = "-w" 
+ " }}}
