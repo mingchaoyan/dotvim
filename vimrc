@@ -135,7 +135,7 @@ map <silent> <leader>lk <Plug>LookupFile
 
 "vimerl {{{
 let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
-let erlang_keywordprg = "man"
+let erlang_keywordprg = "erl -man"
 let erlang_skel_header={"author":"mingchaoyan@gmail.com","owner":"mingchaoyan","year":"2015"}
 let erlang_folding  = 1
 nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
