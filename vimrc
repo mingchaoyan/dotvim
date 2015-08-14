@@ -179,6 +179,10 @@ augroup filetype_vim
 augroup END
 " }}}
 
+" Erlang source code filesettings {{{
+autocmd BufRead */usr/local/lib/erlang/*   set tabstop=8
+" }}}
+
 " SingleCompile {{{
 nmap <leader>rr :SingleCompileRun<CR>
  "}}}
