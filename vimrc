@@ -181,7 +181,7 @@ augroup END
 
 " Erlang source code filesettings {{{
 autocmd BufRead */usr/local/lib/erlang/*   set tabstop=8
-autocmd BufRead */usr/local/otp_src*/*   set tabstop=8
+autocmd BufRead *otp_src*/*   set tabstop=8
 " }}}
 
 " SingleCompile {{{
