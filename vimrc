@@ -77,7 +77,7 @@ set list
 set lcs=tab:\|\ 
 set path+=/usr/local/otp_src_17.5/lib,**
 set define=-define
-set include=-include
+set include=^\s*[#,-]\s*include
 set magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
 set makeprg=erl\ -make 
 set showcmd
@@ -134,7 +134,6 @@ map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
 "vimerl {{{
-let g:eralngManPath="/home/mingchaoyan/otp_doc_man_R15B02/man"
 let erlang_keywordprg = "erl -man"
 let erlang_skel_header={"author":"mingchaoyan@gmail.com","owner":"mingchaoyan","year":"2015"}
 let erlang_folding  = 1
@@ -172,11 +171,16 @@ augroup END
 " }}}
 
 " ULua file settings {{{
-augroup filetype_vim
-    autocmd!
-    autocmd FileType text setlocal filetype=lua
-    let NERDTreeIgnore=['\.meta$', '\~$']
-augroup END
+"augroup filetype_vim
+"    autocmd!
+"    autocmd FileType text setlocal filetype=lua
+"    let NERDTreeIgnore=['\.meta$', '\~$']
+"augroup END
+" }}}
+
+" Misc filetype {{{
+autocmd BufRead README set filetype=markdown
+autocmd BufRead rebar.config set filetype=erlang
 " }}}
 
 " Erlang source code filesettings {{{
