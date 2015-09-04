@@ -73,7 +73,7 @@ set scrolloff=7
 set shiftwidth=4 
 set tabstop=4
 set expandtab
-set list
+set nolist
 set lcs=tab:\|\ 
 set path+=/usr/local/otp_src_17.5/lib,**
 set define=-define
@@ -180,7 +180,9 @@ augroup END
 
 " Misc filetype {{{
 autocmd BufRead README set filetype=markdown
-autocmd BufRead rebar.config set filetype=erlang
+autocmd BufRead *.config set filetype=erlang
+autocmd BufRead *.app set filetype=erlang
+
 " }}}
 
 " Erlang source code filesettings {{{
