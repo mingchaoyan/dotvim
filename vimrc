@@ -70,8 +70,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set go=
 set ignorecase smartcase
 set scrolloff=7 
-set shiftwidth=4 
-set tabstop=4
+set tabstop=8
 set expandtab
 set nolist
 set lcs=tab:\|\ 
@@ -198,3 +197,10 @@ nmap <leader>rr :SingleCompileRun<CR>
  let g:DirDiffExcludes = "*.meta,*.so,*.a,*.dll,*DS_Store"
  let g:DirDiffAddArgs = "-w" 
  " }}}
+
+" CoffeeScript file settings {{{
+augroup filetype_CoffeeScript
+    autocmd!
+    autocmd FileType coffee set shiftwidth=2
+augroup END
+" }}}
