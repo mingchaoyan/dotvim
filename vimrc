@@ -99,7 +99,6 @@ let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
-
 "nerdtree {{{
 noremap <F4> :NERDTreeToggle<CR>
 let NERDTreeDirArrows=0
@@ -121,6 +120,7 @@ nmap <leader>rr :SingleCompileRun<CR>
 let g:DirDiffExcludes = "*.meta,*.so,*.a,*.dll,*DS_Store"
 let g:DirDiffAddArgs = "-w" 
 " }}}
+
 "  powerline {{{
 let g:Powerline_colorscheme = 'solarized256'
 "  }}}
@@ -173,5 +173,3 @@ autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
 " }}}
-
-
