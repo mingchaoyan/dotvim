@@ -47,6 +47,9 @@ set cursorcolumn
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 hi CursorColumn cterm=NONE ctermbg=234 ctermfg=NONE
+syntax enable
+set background=dark
+colorscheme solarized
 nnoremap <space> za
 set showmatch
 set matchtime=5
