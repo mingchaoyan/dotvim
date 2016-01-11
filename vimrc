@@ -45,6 +45,7 @@ set showcmd
 set t_Co=256
 set cursorcolumn
 set cursorline
+set colorcolumn=80
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 hi CursorColumn cterm=NONE ctermbg=234 ctermfg=NONE
 syntax enable
@@ -163,6 +164,7 @@ augroup END
 augroup filetype_CoffeeScript
         autocmd!
         autocmd FileType coffee set shiftwidth=2
+        autocmd FileType coffee let g:indent_guides_size=2
         autocmd FileType coffee noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*coffee  <CR>:lw<CR>
         autocmd FileType coffee noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
         autocmd FileType coffee noremap set suffixesadd=.coffee
