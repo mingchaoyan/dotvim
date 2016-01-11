@@ -160,6 +160,22 @@ augroup filetype_lua
 augroup END
 " }}}
 
+" JavaScript file settings {{{
+augroup filetype_JavaScript
+        autocmd!
+        autocmd FileType javascript set shiftwidth=2
+        let g:javascript_conceal_function   = "ƒ"
+        let g:javascript_conceal_null       = "ø"
+        let g:javascript_conceal_this       = "@"
+        let g:javascript_conceal_return     = "⇚"
+        let g:javascript_conceal_undefined  = "¿"
+        let g:javascript_conceal_NaN        = "ℕ"
+        let g:javascript_conceal_prototype  = "¶"
+        let g:javascript_conceal_static     = "•"
+        let g:javascript_conceal_super      = "Ω"
+augroup END
+" }}}
+
 " CoffeeScript file settings {{{
 augroup filetype_CoffeeScript
         autocmd!
