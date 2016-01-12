@@ -105,7 +105,11 @@ map <silent> <leader>lk <Plug>LookupFile
 
 "nerdtree {{{
 noremap <F4> :NERDTreeToggle<CR>
-let NERDTreeDirArrows=0
+"}}}
+
+"vim-nerdtree-tabs {{{
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_autofind=1
 "}}}
 
 "snipmate {{{
