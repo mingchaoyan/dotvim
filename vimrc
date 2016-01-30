@@ -19,6 +19,7 @@ filetype plugin indent on
 "}}}
 
 "general {{{
+set textwidth=80
 inoremap jk <esc>
 inoremap <esc> <nop>
 set nocompatible   
@@ -35,8 +36,6 @@ set ignorecase smartcase
 set scrolloff=7 
 set tabstop=8
 set expandtab
-set nolist
-set lcs=tab:\|\ 
 set path+=/usr/local/otp_src_17.5/lib,**
 set define=-define
 set include=^\s*[#,-]\s*include
