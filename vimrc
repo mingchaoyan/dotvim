@@ -102,10 +102,6 @@ let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
-"nerdtree {{{
-noremap <F4> :NERDTreeToggle<CR>
-"}}}
-
 "vim-nerdtree-tabs {{{
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_autofind=1
@@ -128,9 +124,15 @@ let g:DirDiffExcludes = "*.meta,*.so,*.a,*.dll,*DS_Store"
 let g:DirDiffAddArgs = "-w" 
 " }}}
 
-"  powerline {{{
+" powerline {{{
 let g:Powerline_colorscheme = 'solarized256'
 "  }}}
+
+" vim-nerdtree-tabs {{{
+let g:nerdtree_tabs_open_on_gui_startup = 0 
+let g:nerdtree_tabs_open_on_console_startup = 0  
+noremap <F4> :NERDTreeTabsToggle<CR>
+" }}}
 
 " Vimscript file settings {{{
 augroup filetype_vim
