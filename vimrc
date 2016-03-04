@@ -19,6 +19,7 @@ filetype plugin indent on
 "}}}
 
 "general {{{
+set backspace=indent,eol,start
 set textwidth=80
 inoremap jk <esc>
 inoremap <esc> <nop>
@@ -185,6 +186,8 @@ augroup END
 augroup filetype_CoffeeScript
         autocmd!
         autocmd FileType coffee set shiftwidth=2
+        autocmd FileType coffee let coffee_indent_keep_current=1
+        autocmd FileType coffee unlet b:did_indent | runtime indent/coffee.vim
         autocmd FileType coffee let g:indent_guides_size=2
         autocmd FileType coffee noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*coffee  <CR>:lw<CR>
         autocmd FileType coffee noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
