@@ -103,11 +103,6 @@ let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
 "}}}
 
-"vim-nerdtree-tabs {{{
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_autofind=1
-"}}}
-
 "snipmate {{{
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<CR>
 "}}}
@@ -128,12 +123,6 @@ let g:DirDiffAddArgs = "-w"
 " powerline {{{
 let g:Powerline_colorscheme = 'solarized256'
 "  }}}
-
-" vim-nerdtree-tabs {{{
-let g:nerdtree_tabs_open_on_gui_startup = 0 
-let g:nerdtree_tabs_open_on_console_startup = 0  
-noremap <F4> :NERDTreeTabsToggle<CR>
-" }}}
 
 " Vimscript file settings {{{
 augroup filetype_vim
@@ -194,6 +183,7 @@ augroup filetype_CoffeeScript
         autocmd FileType coffee noremap set suffixesadd=.coffee
         autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
         autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+        autocmd QuickFixCmdPost * nested cwindow | redraw!
 augroup END
 "}}}
 
