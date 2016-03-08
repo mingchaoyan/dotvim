@@ -187,6 +187,13 @@ augroup filetype_CoffeeScript
 augroup END
 "}}}
 
+" Ruby file settings {{{
+augroup filetype_Ruby
+        autocmd!
+        autocmd FileType ruby set shiftwidth=2
+augroup END
+"}}}
+
 " Misc filetype {{{
 autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
