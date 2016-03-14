@@ -19,6 +19,7 @@ filetype plugin indent on
 "}}}
 
 "general {{{
+set autochdir
 set backspace=indent,eol,start
 set textwidth=80
 inoremap jk <esc>
@@ -159,6 +160,7 @@ augroup END
 augroup filetype_JavaScript
         autocmd!
         autocmd FileType javascript set shiftwidth=2
+        autocmd FileType json set shiftwidth=2
         let g:javascript_conceal_function   = "ƒ"
         let g:javascript_conceal_null       = "ø"
         let g:javascript_conceal_this       = "@"
