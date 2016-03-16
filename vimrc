@@ -196,6 +196,13 @@ augroup filetype_Ruby
 augroup END
 "}}}
 
+" YAML file settings {{{
+augroup filetype_YAML
+        autocmd!
+        autocmd FileType YAMl set shiftwidth=2
+augroup END
+"}}}
+
 " Misc filetype {{{
 autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
