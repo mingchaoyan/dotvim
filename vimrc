@@ -180,7 +180,7 @@ augroup filetype_CoffeeScript
         autocmd FileType coffee let coffee_indent_keep_current=1
         autocmd FileType coffee unlet b:did_indent | runtime indent/coffee.vim
         autocmd FileType coffee let g:indent_guides_size=2
-        autocmd FileType coffee noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*coffee  <CR>:lw<CR>
+        autocmd FileType coffee noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.coffee  <CR>:lw<CR>
         autocmd FileType coffee noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
         autocmd FileType coffee noremap set suffixesadd=.coffee
         autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
@@ -193,6 +193,11 @@ augroup END
 augroup filetype_Ruby
         autocmd!
         autocmd FileType ruby set shiftwidth=2
+        autocmd FileType eruby set shiftwidth=2
+        autocmd FileType ruby noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*rb  <CR>:lw<CR>
+        autocmd FileType ruby noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
+        autocmd FileType eruby noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*erb  <CR>:lw<CR>
+        autocmd FileType eruby noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
 augroup END
 "}}}
 
@@ -200,6 +205,13 @@ augroup END
 augroup filetype_YAML
         autocmd!
         autocmd FileType YAMl set shiftwidth=2
+augroup END
+"}}}
+
+" Pascal file settings {{{
+augroup filetype_Pascal
+        autocmd!
+        autocmd FileType pascal set shiftwidth=2
 augroup END
 "}}}
 
