@@ -125,6 +125,10 @@ let g:DirDiffAddArgs = "-w"
 let g:Powerline_colorscheme = 'solarized256'
 "  }}}
 
+" dash {{{
+nnoremap <leader>da :Dash<CR>
+"  }}}
+
 " Vimscript file settings {{{
 augroup filetype_vim
         autocmd!
