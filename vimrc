@@ -84,6 +84,9 @@ nnoremap <leader>ee :split $MYVIMRC<CR>
 nnoremap <leader>ss :source $MYVIMRC<CR>
 "}}}
 
+" nerd {{{
+let NERDTreeIgnore=['\.meta$', '\~$']
+" }}}
 "taglist setting {{{
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
@@ -129,6 +132,9 @@ let g:Powerline_colorscheme = 'solarized256'
 nnoremap <leader>da :Dash<CR>
 "  }}}
 
+" EditorConfig settings {{{
+"let g:EditorConfig_verbose = 1
+"}}}
 " Vimscript file settings {{{
 augroup filetype_vim
         autocmd!
@@ -223,4 +229,5 @@ augroup END
 autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
+autocmd BufRead *.txt set filetype=lua
 " }}}
