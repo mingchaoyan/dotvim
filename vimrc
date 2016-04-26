@@ -38,7 +38,6 @@ set ignorecase smartcase
 set scrolloff=7 
 set tabstop=8
 set expandtab
-set path+=/usr/local/otp_src_17.5/lib,**
 set define=-define
 set include=^\s*[#,-]\s*include
 set magic "除了 $ . * ^ 这四种其他元字符都要加反斜杠\
@@ -135,10 +134,18 @@ nnoremap <leader>da :Dash<CR>
 " EditorConfig settings {{{
 "let g:EditorConfig_verbose = 1
 "}}}
+
+" C file settings {{{
+augroup filetype_vim
+        autocmd!
+        autocmd FileType c set foldmethod=marker
+augroup END
+" }}}
+
 " Vimscript file settings {{{
 augroup filetype_vim
         autocmd!
-        autocmd FileType vim setlocal foldmethod=marker
+        autocmd FileType c set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
 augroup END
 " }}}
 
@@ -147,8 +154,7 @@ augroup filetype_erlang
         autocmd!
         autocmd FileType erlang set makeprg=erl\ -make 
         autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*rl  <CR>:lw<CR>
-        autocmd BufRead */usr/local/lib/erlang/*   set tabstop=8
-        autocmd BufRead *otp_src*/*   set tabstop=8
+        autocmd FileType erlang set path+=/usr/local/otp_src_17.5/lib,**
 augroup END
 "vimerl 
 let erlang_keywordprg = "erl -man"
