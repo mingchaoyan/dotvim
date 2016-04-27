@@ -86,6 +86,7 @@ nnoremap <leader>ss :source $MYVIMRC<CR>
 " nerd {{{
 let NERDTreeIgnore=['\.meta$', '\~$']
 " }}}
+
 "taglist setting {{{
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1 
@@ -136,16 +137,16 @@ nnoremap <leader>da :Dash<CR>
 "}}}
 
 " C file settings {{{
-augroup filetype_vim
+augroup filetype_C
         autocmd!
-        autocmd FileType c set foldmethod=marker
+        autocmd FileType c set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
 augroup END
 " }}}
 
 " Vimscript file settings {{{
 augroup filetype_vim
         autocmd!
-        autocmd FileType c set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
+        autocmd FileType vim set foldmethod=marker
 augroup END
 " }}}
 
