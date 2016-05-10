@@ -19,9 +19,9 @@ filetype plugin indent on
 "}}}
 
 "general {{{
-set autochdir
+"set autochdir
 set backspace=indent,eol,start
-set textwidth=80
+"set textwidth=80
 inoremap jk <esc>
 inoremap <esc> <nop>
 set nocompatible   
@@ -95,16 +95,8 @@ noremap <silent> <F9> :TlistToggle<CR>
 set tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 "}}}
 
-"lookupfile setting {{{
-let g:LookupFile_MinPatLength=2 
-let g:LookupFile_UsingSpecializedTags = 1
-let g:LookupFile_PreserveLastPattern=0 
-let g:LookupFile_PreservePatternHistory=1 
-let g:LookupFile_AllowNewFiles = 1
-let g:LookupFile_AlwaysAcceptFirst=1 
-let g:LookupFile_DefaultCmd = ':LUPath'
-let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
-map <silent> <leader>lk <Plug>LookupFile
+"ctrlp setting {{{
+let g:ctrlp_max_files = 0
 "}}}
 
 "snipmate {{{
@@ -238,3 +230,4 @@ autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
 autocmd BufRead *.txt set filetype=lua
 " }}}
+"
