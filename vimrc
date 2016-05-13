@@ -66,6 +66,7 @@ cnoremap <C-F> <Right>
 cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
+cmap w!! w !sudo tee > /dev/null %
 "}}}
 
 " load plugins that ship with Vim {{{
