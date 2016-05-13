@@ -228,6 +228,4 @@ augroup END
 autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
-autocmd BufRead *.txt set filetype=lua
 " }}}
-"
