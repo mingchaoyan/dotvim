@@ -230,3 +230,9 @@ autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
 " }}}
+  let g:ctrlp_max_depth = 40
+  let g:ctrlp_follow_symlinks=1
+
+set path+=**
+let g:ctrlp_path_nolim = 1
+
