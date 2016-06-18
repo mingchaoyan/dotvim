@@ -64,3 +64,9 @@
 [submodule "bundle/vim-erlang-compiler"]
 	path = bundle/vim-erlang-compiler
 	url = https://github.com/vim-erlang/vim-erlang-compiler.git
+[submodule "bundle/genutils"]
+	path = bundle/genutils
+	url = https://github.com/vim-scripts/genutils
+[submodule "bundle/lookupfile"]
+	path = bundle/lookupfile
+	url = https://github.com/vim-scripts/lookupfile

@@ -67,6 +67,7 @@ cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cmap w!! w !sudo tee > /dev/null %
+set path+=**
 "}}}
 
 " load plugins that ship with Vim {{{
@@ -96,9 +97,18 @@ noremap <silent> <F9> :TlistToggle<CR>
 set tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags 
 "}}}
 
-"ctrlp setting {{{
-let g:ctrlp_max_files = 0
-"}}}
+"lookupfile setting {{{
+let g:LookupFile_MinPatLength=2 
+let g:LookupFile_UsingSpecializedTags = 1
+let g:LookupFile_PreserveLastPattern=0 
+let g:LookupFile_PreservePatternHistory=1 
+let g:LookupFile_AllowNewFiles = 1
+let g:LookupFile_AlwaysAcceptFirst=1 
+let g:LookupFile_DefaultCmd = ':LUPath'
+let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
+map <silent> <leader>lk <Plug>LookupFile
+ " }}}
+ 
 
 "snipmate {{{
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<CR>
@@ -230,9 +240,3 @@ autocmd BufRead README set filetype=markdown
 autocmd BufRead *.config set filetype=erlang
 autocmd BufRead *.app set filetype=erlang
 " }}}
-  let g:ctrlp_max_depth = 40
-  let g:ctrlp_follow_symlinks=1
-
-set path+=**
-let g:ctrlp_path_nolim = 1
-
