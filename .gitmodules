@@ -70,3 +70,9 @@
 [submodule "bundle/lookupfile"]
 	path = bundle/lookupfile
 	url = https://github.com/vim-scripts/lookupfile
+[submodule "bundle/vim-erlang-omnicomplete"]
+	path = bundle/vim-erlang-omnicomplete
+	url = https://github.com/vim-erlang/vim-erlang-omnicomplete.git
+[submodule "bundle/vim-erlang-skeletons"]
+	path = bundle/vim-erlang-skeletons
+	url = https://github.com/vim-erlang/vim-erlang-skeletons.git
