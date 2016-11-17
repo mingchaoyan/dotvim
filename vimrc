@@ -67,7 +67,6 @@ cnoremap <C-B> <Left>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cmap w!! w !sudo tee > /dev/null %
-set path+=**
 "}}}
 
 " load plugins that ship with Vim {{{
@@ -108,7 +107,6 @@ let g:LookupFile_DefaultCmd = ':LUPath'
 let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
  " }}}
- 
 
 "snipmate {{{
 noremap <silent> <leader>sn :tabnew ~/.vim/bundle/snipmate.vim/snippets/erlang.snippets<CR>
@@ -139,104 +137,3 @@ nnoremap <leader>da :Dash<CR>
 "let g:EditorConfig_verbose = 1
 "}}}
 
-" C file settings {{{
-augroup filetype_C
-        autocmd!
-        autocmd FileType c set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
-augroup END
-" }}}
-
-" Vimscript file settings {{{
-augroup filetype_vim
-        autocmd!
-        autocmd FileType vim set foldmethod=marker
-augroup END
-" }}}
-
-" Erlang file settings {{{
-augroup filetype_erlang
-        autocmd!
-        autocmd FileType erlang set makeprg=erl\ -make 
-        autocmd FileType erlang noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*rl  <CR>:lw<CR>
-        autocmd FileType erlang set path+=/usr/local/otp_src_17.5/lib,**
-augroup END
-"vimerl 
-let erlang_keywordprg = "erl -man"
-let erlang_skel_header={"author":"mingchaoyan@gmail.com","owner":"mingchaoyan","year":"2015"}
-let erlang_folding  = 1
-nnoremap <silent> <leader>f :r ~/.vim/function.comment<CR>
-nnoremap <F5> :make<CR>
-noremap <F6> :!erlc +debug_info  -I ./include/ -o ./ebin %<CR>
-"}}}
-
-" Lua file settings {{{
-augroup filetype_lua
-        autocmd!
-        autocmd FileType lua noremap <leader>lv :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.lua  <CR>:lw<CR>
-augroup END
-" }}}
-
-" JavaScript file settings {{{
-augroup filetype_JavaScript
-        autocmd!
-        autocmd FileType javascript set shiftwidth=2
-        autocmd FileType json set shiftwidth=2
-        let g:javascript_conceal_function   = "ƒ"
-        let g:javascript_conceal_null       = "ø"
-        let g:javascript_conceal_this       = "@"
-        let g:javascript_conceal_return     = "⇚"
-        let g:javascript_conceal_undefined  = "¿"
-        let g:javascript_conceal_NaN        = "ℕ"
-        let g:javascript_conceal_prototype  = "¶"
-        let g:javascript_conceal_static     = "•"
-        let g:javascript_conceal_super      = "Ω"
-augroup END
-" }}}
-
-" CoffeeScript file settings {{{
-augroup filetype_CoffeeScript
-        autocmd!
-        autocmd FileType coffee set shiftwidth=2
-        autocmd FileType coffee let coffee_indent_keep_current=1
-        autocmd FileType coffee unlet b:did_indent | runtime indent/coffee.vim
-        autocmd FileType coffee let g:indent_guides_size=2
-        autocmd FileType coffee noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.coffee  <CR>:lw<CR>
-        autocmd FileType coffee noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
-        autocmd FileType coffee noremap set suffixesadd=.coffee
-        autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-        autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
-        autocmd QuickFixCmdPost * nested cwindow | redraw!
-augroup END
-"}}}
-
-" Ruby file settings {{{
-augroup filetype_Ruby
-        autocmd!
-        autocmd FileType ruby set shiftwidth=2
-        autocmd FileType eruby set shiftwidth=2
-        autocmd FileType ruby noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*rb  <CR>:lw<CR>
-        autocmd FileType ruby noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
-        autocmd FileType eruby noremap <leader>lg :lv /\<<C-R>=expand("<cword>")<CR>\>/j **/*.*erb  <CR>:lw<CR>
-        autocmd FileType eruby noremap <leader>lf :lv /\<<C-R>=expand("<cword>")<CR>\>/j %  <CR>:lw<CR>
-augroup END
-"}}}
-
-" YAML file settings {{{
-augroup filetype_YAML
-        autocmd!
-        autocmd FileType YAMl set shiftwidth=2
-augroup END
-"}}}
-
-" Pascal file settings {{{
-augroup filetype_Pascal
-        autocmd!
-        autocmd FileType pascal set shiftwidth=2
-augroup END
-"}}}
-
-" Misc filetype {{{
-autocmd BufRead README set filetype=markdown
-autocmd BufRead *.config set filetype=erlang
-autocmd BufRead *.app set filetype=erlang
-" }}}
