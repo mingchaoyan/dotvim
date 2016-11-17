@@ -82,3 +82,6 @@
 [submodule "bundle/vim-erlang-tags"]
 	path = bundle/vim-erlang-tags
 	url = https://github.com/vim-erlang/vim-erlang-tags.git
+[submodule "bundle/potion"]
+	path = bundle/potion
+	url = https://github.com/mingchaoyan/potion.git
