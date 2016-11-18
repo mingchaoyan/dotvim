@@ -55,9 +55,6 @@
 [submodule "bundle/dash"]
 	path = bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "bundle/editorconfig"]
 	path = bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
@@ -82,6 +79,3 @@
 [submodule "bundle/vim-erlang-tags"]
 	path = bundle/vim-erlang-tags
 	url = https://github.com/vim-erlang/vim-erlang-tags.git
-[submodule "bundle/potion"]
-	path = bundle/potion
-	url = https://github.com/mingchaoyan/potion.git

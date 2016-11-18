@@ -19,7 +19,7 @@ filetype plugin indent on
 "}}}
 
 "general {{{
-"set autochdir
+set path=**
 set backspace=indent,eol,start
 "set textwidth=80
 inoremap jk <esc>
@@ -97,14 +97,14 @@ set tags=tags,/usr/local/src/otp_src_R15B02/lib/stdlib/tags
 "}}}
 
 "lookupfile setting {{{
-let g:LookupFile_MinPatLength=2 
-let g:LookupFile_UsingSpecializedTags = 1
-let g:LookupFile_PreserveLastPattern=0 
-let g:LookupFile_PreservePatternHistory=1 
-let g:LookupFile_AllowNewFiles = 1
-let g:LookupFile_AlwaysAcceptFirst=1 
+"let g:LookupFile_MinPatLength=2 
+"let g:LookupFile_UsingSpecializedTags = 1
+"let g:LookupFile_PreserveLastPattern=0 
+"let g:LookupFile_PreservePatternHistory=1 
+"let g:LookupFile_AllowNewFiles = 1
+"let g:LookupFile_AlwaysAcceptFirst=1 
 let g:LookupFile_DefaultCmd = ':LUPath'
-let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
+"let g:LookupFile_FileFilter = '\.meta$\|\.beam$'
 map <silent> <leader>lk <Plug>LookupFile
  " }}}
 
