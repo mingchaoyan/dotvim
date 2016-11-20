@@ -137,3 +137,7 @@ nnoremap <leader>da :Dash<CR>
 "let g:EditorConfig_verbose = 1
 "}}}
 
+" YouCompleteMe settings {{{
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let g:ycm_seed_identifiers_with_syntax=1
+"}}}

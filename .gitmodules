@@ -79,3 +79,6 @@
 [submodule "bundle/vim-erlang-tags"]
 	path = bundle/vim-erlang-tags
 	url = https://github.com/vim-erlang/vim-erlang-tags.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
