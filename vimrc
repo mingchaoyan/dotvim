@@ -141,3 +141,9 @@ nnoremap <leader>da :Dash<CR>
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_seed_identifiers_with_syntax=1
 "}}}
+"
+
+" Calendar settings {{{
+map <silent> <leader>dia :set norelativenumber<cr>:Calendar<cr>
+" }}}
+"
