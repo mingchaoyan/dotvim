@@ -82,3 +82,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim_sproto"]
+	path = bundle/vim_sproto
+	url = https://github.com/spin6lock/vim_sproto.git

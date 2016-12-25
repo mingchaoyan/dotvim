@@ -1,13 +1,15 @@
 "load plugins by platform {{{
 function! MySys()
-        if has("win32")
-                return "windows"
-        else
-                return "linux"
-        endif
+  if has("win32")
+    return "windows"
+  else
+    return "linux"
+  endif
 endfunction
+"let g:pathogen_disabled = ['vim-lua-ftplugin']
+let g:pathogen_disabled = ['YouCompleteMe']
 if MySys() == "windows"
-        let g:pathogen_disabled = ['vimerl']
+  let g:pathogen_disabled = ['vimerl', 'vim-lua-ftplugin']
 endif
 "}}}
 
@@ -141,9 +143,7 @@ nnoremap <leader>da :Dash<CR>
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:ycm_seed_identifiers_with_syntax=1
 "}}}
-"
 
 " Calendar settings {{{
 map <silent> <leader>dia :set norelativenumber<cr>:Calendar<cr>
 " }}}
-"
