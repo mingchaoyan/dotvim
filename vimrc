@@ -127,8 +127,9 @@ let g:DirDiffExcludes = "*.meta,*.so,*.a,*.dll,*DS_Store"
 let g:DirDiffAddArgs = "-w" 
 " }}}
 
-" powerline {{{
-let g:Powerline_colorscheme = 'solarized256'
+" Powerline {{{
+set rtp+=/Users/mingchaoyan/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+set laststatus=2
 "  }}}
 
 " dash {{{
